@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/index.css">
+	<title>Title</title>
+</head>
+<body>
+  <div class="header">
+  	<img src="{{ STATIC_URL }}img/yan_vermeer_devushka_s_zhemchuzhnoj_serezhkoj_maslo_kholst_art_117721_3415x3415.png" />
+  </div>
+  <div class="archive">
+  	{% for post in posts %}
+     <div class="one-post">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <div class="article-info">
+               <div class="article-author">{{
+          post.author.username }}</div>
+               <div class="article-created- date">{{
+          post.created_date }}</div>
+          </div>
+          <p class="article-text">{{ post.get_excerpt }}</p>
+     </div>
+	{% endfor %}
+  </div>
+</body>
+</html>
